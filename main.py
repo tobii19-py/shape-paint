@@ -28,6 +28,19 @@ while True:
         r1 = Rectangle(x=rec_x, y=rec_y, height=rec_height, width=rec_width, color=(red, green, blue))
         r1.draw(canvas)
 
+    # Call square data and create square if option is square
+    if shape_type.lower() == "square":
+        sqr_x = int(input("Enter x of the square: "))
+        sqr_y = int(input("Enter y of the square: "))
+        sqr_side = int(input("Enter the side length of the square: "))
+        red = int(input("How much red should the square have? "))
+        green = int(input("How much green should the square have? "))
+        blue = int(input("How much blue should the square have? "))
+        s1 = Square(x=sqr_x, y=sqr_y, side=sqr_side, color=(red, green, blue))
+        s1.draw(canvas)
 
-    s1.draw(canvas)
+    # Break loop iuf user enters 'quit'
+    if shape_type == 'quit':
+        break
+
 canvas.make('canvas.png')

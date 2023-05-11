@@ -13,7 +13,21 @@ canvas_color = input("Enter canvas color (white or black): ")
 canvas = Canvas(height=canvas_height, width=canvas_width, color=colors[canvas_color])
 
 while True:
+    shape_type = input("What would you like to draw on canvas? Enter quit to quit. ")
+    # Call rectangle data and create rectangle if option is rectangle
+    if shape_type.lower() == "rectangle":
+        rec_x = int(input("Enter x of the rectangle: "))
+        rec_y = int(input("Enter y of the rectangle: "))
+        rec_width = int(input("Enter width of the rectangle: "))
+        rec_height = int(input("Enter height of the rectangle: "))
+        red = int(input("How much red should the rectangle have? "))
+        green = int(input("How much green should the rectangle have? "))
+        blue = int(input("How much blue should the rectangle have? "))
 
-    r1.draw(canvas)
+        # Create the rectangle
+        r1 = Rectangle(x=rec_x, y=rec_y, height=rec_height, width=rec_width, color=(red, green, blue))
+        r1.draw(canvas)
+
+
     s1.draw(canvas)
-    canvas.make('canvas.png')
+canvas.make('canvas.png')
